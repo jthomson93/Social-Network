@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
+import Firebase
+import FirebaseAuth
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class SignInVC: UIViewController {
+    @IBOutlet weak var fbLoginButton: RoundFBLogo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +27,10 @@ class SignInVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func fbLoginButtonPressed(_ sender: Any) {
+        
+        let fbAuth = FacebookAuth()
+        fbAuth.logIn(viewController: self)
+    }
+    
 }
-
