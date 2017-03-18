@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EC113466832A8694946036E /* Pods_DevslopesSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */; };
 		7DBB62B91E7DAAFE00C2C4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */; };
 		7DBB62BB1E7DAAFE00C2C4EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62BA1E7DAAFE00C2C4EE /* ViewController.swift */; };
 		7DBB62BE1E7DAAFE00C2C4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62BC1E7DAAFE00C2C4EE /* Main.storyboard */; };
 		7DBB62C11E7DAAFE00C2C4EE /* DevslopesSocial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62BF1E7DAAFE00C2C4EE /* DevslopesSocial.xcdatamodeld */; };
 		7DBB62C31E7DAAFE00C2C4EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62C21E7DAAFE00C2C4EE /* Assets.xcassets */; };
 		7DBB62C61E7DAAFE00C2C4EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62C41E7DAAFE00C2C4EE /* LaunchScreen.storyboard */; };
+		7DBB62CE1E7DAB8800C2C4EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62CD1E7DAB8800C2C4EE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevslopesSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBB62B51E7DAAFE00C2C4EE /* DevslopesSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevslopesSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DBB62BA1E7DAAFE00C2C4EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		7DBB62C21E7DAAFE00C2C4EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DBB62C51E7DAAFE00C2C4EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DBB62C71E7DAAFE00C2C4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBB62CD1E7DAB8800C2C4EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABF7A03E8B4A8C34FC0924D2 /* Pods-DevslopesSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevslopesSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevslopesSocial/Pods-DevslopesSocial.release.xcconfig"; sourceTree = "<group>"; };
+		E56DDDBF18B2042F591171E7 /* Pods-DevslopesSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevslopesSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevslopesSocial/Pods-DevslopesSocial.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC113466832A8694946036E /* Pods_DevslopesSocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				7DBB62B71E7DAAFE00C2C4EE /* DevslopesSocial */,
 				7DBB62B61E7DAAFE00C2C4EE /* Products */,
+				8ADAA74CE0298A37018225F9 /* Pods */,
+				B0E625719F3203AD7CCABDD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,26 @@
 				7DBB62C41E7DAAFE00C2C4EE /* LaunchScreen.storyboard */,
 				7DBB62C71E7DAAFE00C2C4EE /* Info.plist */,
 				7DBB62BF1E7DAAFE00C2C4EE /* DevslopesSocial.xcdatamodeld */,
+				7DBB62CD1E7DAB8800C2C4EE /* GoogleService-Info.plist */,
 			);
 			path = DevslopesSocial;
+			sourceTree = "<group>";
+		};
+		8ADAA74CE0298A37018225F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E56DDDBF18B2042F591171E7 /* Pods-DevslopesSocial.debug.xcconfig */,
+				ABF7A03E8B4A8C34FC0924D2 /* Pods-DevslopesSocial.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B0E625719F3203AD7CCABDD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DBB62CA1E7DAAFE00C2C4EE /* Build configuration list for PBXNativeTarget "DevslopesSocial" */;
 			buildPhases = (
+				AFCB8636E0A2A6463638F646 /* [CP] Check Pods Manifest.lock */,
 				7DBB62B11E7DAAFE00C2C4EE /* Sources */,
 				7DBB62B21E7DAAFE00C2C4EE /* Frameworks */,
 				7DBB62B31E7DAAFE00C2C4EE /* Resources */,
+				4074759F0D4328DD1E522B57 /* [CP] Embed Pods Frameworks */,
+				B7268C2A71A62B33B3840EA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,12 +158,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DBB62C61E7DAAFE00C2C4EE /* LaunchScreen.storyboard in Resources */,
+				7DBB62CE1E7DAB8800C2C4EE /* GoogleService-Info.plist in Resources */,
 				7DBB62C31E7DAAFE00C2C4EE /* Assets.xcassets in Resources */,
 				7DBB62BE1E7DAAFE00C2C4EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4074759F0D4328DD1E522B57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevslopesSocial/Pods-DevslopesSocial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFCB8636E0A2A6463638F646 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B7268C2A71A62B33B3840EA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DevslopesSocial/Pods-DevslopesSocial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DBB62B11E7DAAFE00C2C4EE /* Sources */ = {
@@ -261,6 +340,7 @@
 		};
 		7DBB62CB1E7DAAFE00C2C4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56DDDBF18B2042F591171E7 /* Pods-DevslopesSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZP5LV6GTM6;
@@ -274,6 +354,7 @@
 		};
 		7DBB62CC1E7DAAFE00C2C4EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABF7A03E8B4A8C34FC0924D2 /* Pods-DevslopesSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZP5LV6GTM6;
