@@ -16,6 +16,8 @@ import FBSDKLoginKit
 
 class SignInVC: UIViewController {
     @IBOutlet weak var fbLoginButton: RoundFBLogo!
+    @IBOutlet weak var emailField: FancyField!
+    @IBOutlet weak var passwordField: FancyField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +34,13 @@ class SignInVC: UIViewController {
         let fbAuth = FacebookAuth()
         fbAuth.logIn(viewController: self)
     }
+    
+    @IBAction func signInButtonPressed(_ sender: Any) {
+        
+        let emailAuth = EmailAuth()
+        emailAuth.emailLogin(emailField: emailField, pwdField: passwordField)
+        
+    }
+    
     
 }
