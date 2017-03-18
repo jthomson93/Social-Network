@@ -92,6 +92,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nba-sX-aCD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -116,7 +119,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="zXX-QG-jqi" id="fX7-kS-3FL"/>
                         <outlet property="fbLoginButton" destination="vhl-0r-EEz" id="iXv-zm-lv0"/>
+                        <outlet property="passwordField" destination="0B6-lM-0Jd" id="Gsz-zL-BwW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

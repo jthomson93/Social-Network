@@ -16,6 +16,8 @@ import FBSDKLoginKit
 
 class SignInVC: UIViewController {
     @IBOutlet weak var fbLoginButton: RoundFBLogo!
+    @IBOutlet weak var emailField: FancyField!
+    @IBOutlet weak var passwordField: FancyField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +34,30 @@ class SignInVC: UIViewController {
         let fbAuth = FacebookAuth()
         fbAuth.logIn(viewController: self)
     }
+    
+    @IBAction func signInButtonPressed(_ sender: Any) {
+        
+        if let email = emailField.text, let pwd = passwordField.text {
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                
+                if error == nil {
+                    
+                    print("JAMIE: The user authentication with Firebase. EXISTING USER EMAIL")
+                    
+                } else {
+                    
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print("JAMIE: Something has gone horribly wrong!")
+                        } else {
+                            print("JAMIE: The user has successfully be created with Firebase and email log in")
+                        }
+                    })
+                }
+            })
+        }
+    }
+    
     
 }
