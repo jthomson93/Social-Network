@@ -37,26 +37,9 @@ class SignInVC: UIViewController {
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         
-        if let email = emailField.text, let pwd = passwordField.text {
-            
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                
-                if error == nil {
-                    
-                    print("JAMIE: The user authentication with Firebase. EXISTING USER EMAIL")
-                    
-                } else {
-                    
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
-                        if error != nil {
-                            print("JAMIE: Something has gone horribly wrong!")
-                        } else {
-                            print("JAMIE: The user has successfully be created with Firebase and email log in")
-                        }
-                    })
-                }
-            })
-        }
+        let emailAuth = EmailAuth()
+        emailAuth.emailLogin(emailField: emailField, pwdField: passwordField)
+        
     }
     
     
