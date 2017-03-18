@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1EC113466832A8694946036E /* Pods_DevslopesSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */; };
+		7D6F76D71E7DB7EB00CC155E /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76D61E7DB7EB00CC155E /* FancyView.swift */; };
+		7D6F76DA1E7DB87000CC155E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76D91E7DB87000CC155E /* Constants.swift */; };
+		7D6F76DC1E7DBA0100CC155E /* RoundFBLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DB1E7DBA0100CC155E /* RoundFBLogo.swift */; };
+		7D6F76DE1E7DBC5300CC155E /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DD1E7DBC5300CC155E /* FancyField.swift */; };
+		7D6F76E01E7DBD7800CC155E /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DF1E7DBD7800CC155E /* LogInButton.swift */; };
 		7DBB62B91E7DAAFE00C2C4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */; };
 		7DBB62BB1E7DAAFE00C2C4EE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */; };
 		7DBB62BE1E7DAAFE00C2C4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62BC1E7DAAFE00C2C4EE /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 
 /* Begin PBXFileReference section */
 		3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevslopesSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6F76D61E7DB7EB00CC155E /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		7D6F76D91E7DB87000CC155E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7D6F76DB1E7DBA0100CC155E /* RoundFBLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundFBLogo.swift; sourceTree = "<group>"; };
+		7D6F76DD1E7DBC5300CC155E /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
+		7D6F76DF1E7DBD7800CC155E /* LogInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 		7DBB62B51E7DAAFE00C2C4EE /* DevslopesSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevslopesSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -54,6 +64,10 @@
 		7D6F76D41E7DAD6600CC155E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7D6F76D61E7DB7EB00CC155E /* FancyView.swift */,
+				7D6F76DB1E7DBA0100CC155E /* RoundFBLogo.swift */,
+				7D6F76DD1E7DBC5300CC155E /* FancyField.swift */,
+				7D6F76DF1E7DBD7800CC155E /* LogInButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -64,6 +78,14 @@
 				7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7D6F76D81E7DB85E00CC155E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7D6F76D91E7DB87000CC155E /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		7DBB62AC1E7DAAFE00C2C4EE = {
@@ -87,6 +109,7 @@
 		7DBB62B71E7DAAFE00C2C4EE /* DevslopesSocial */ = {
 			isa = PBXGroup;
 			children = (
+				7D6F76D81E7DB85E00CC155E /* Util */,
 				7D6F76D31E7DAD6000CC155E /* Model */,
 				7D6F76D41E7DAD6600CC155E /* View */,
 				7D6F76D51E7DAD6B00CC155E /* Controller */,
@@ -243,8 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6F76DA1E7DB87000CC155E /* Constants.swift in Sources */,
+				7D6F76E01E7DBD7800CC155E /* LogInButton.swift in Sources */,
+				7D6F76DC1E7DBA0100CC155E /* RoundFBLogo.swift in Sources */,
 				7DBB62BB1E7DAAFE00C2C4EE /* SignInVC.swift in Sources */,
 				7DBB62B91E7DAAFE00C2C4EE /* AppDelegate.swift in Sources */,
+				7D6F76D71E7DB7EB00CC155E /* FancyView.swift in Sources */,
+				7D6F76DE1E7DBC5300CC155E /* FancyField.swift in Sources */,
 				7DBB62C11E7DAAFE00C2C4EE /* DevslopesSocial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
