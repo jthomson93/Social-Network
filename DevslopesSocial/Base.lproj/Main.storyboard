@@ -66,6 +66,9 @@
                                     <constraint firstAttribute="height" constant="150" id="zo6-3V-ed2"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="f"/>
+                                <connections>
+                                    <action selector="fbLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTB-If-f4O"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-E1-HeK">
                                 <rect key="frame" x="16" y="380" width="343" height="164"/>
@@ -112,6 +115,9 @@
                             <constraint firstItem="Zus-UN-Jf4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eEy-Gm-KNN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fbLoginButton" destination="vhl-0r-EEz" id="iXv-zm-lv0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
