@@ -19,7 +19,7 @@ class SignInVC: UIViewController {
     @IBOutlet weak var fbLoginButton: RoundFBLogo!
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var passwordField: FancyField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,12 +31,12 @@ class SignInVC: UIViewController {
             self.logInSegue()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func fbLoginButtonPressed(_ sender: Any) {
         
         let loginManager = LoginManager()
@@ -54,34 +54,27 @@ class SignInVC: UIViewController {
                 self.firebaseAuth(credential)
             }
         }
-    
+        
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
-        
         if let email = emailField.text, !email.isEmpty , let pwd = passwordField.text, !pwd.isEmpty {
-            
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                
                 if error == nil {
-                    
                     print("JAMIE: The user authentication with Firebase. EXISTING USER EMAIL")
-                    
                     if let user = user {
-                        self.completeSignIn(user)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(user, userData: userData)
                     }
-                    
                 } else {
-                    
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             print("JAMIE: Something has gone horribly wrong!")
                         } else {
                             print("JAMIE: The user has successfully be created with Firebase and email log in")
-                            
                             if let user = user {
-                                
-                                self.completeSignIn(user)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(user, userData: userData)
                             }
                         }
                     })
@@ -90,10 +83,11 @@ class SignInVC: UIViewController {
         }
     }
     
-    func completeSignIn(_ id: FIRUser) {
+    func completeSignIn(_ id: FIRUser, userData: Dictionary<String, String>) {
         
         let keychainResult = KeychainWrapper.standard.set(id.uid, forKey: KEY_UID)
         print("JAMIE: Data saved to keychain \(keychainResult)")
+        DataService.ds.createFirebaseDBUser(uid: id.uid, userData: userData)
         logInSegue()
     }
     
@@ -102,19 +96,14 @@ class SignInVC: UIViewController {
     }
     
     func firebaseAuth(_ credential: FIRAuthCredential) { //Firebase code to add user to authentication database
-        
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            
             if error != nil {
-                
                 print("JAMIE: Unable to authenticate with Firebase - \(error)")
-                
             } else {
-                
                 print("JAMIE: You have successfully authenticated")
-                
                 if let user = user {
-                    self.completeSignIn(user)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(user, userData: userData)
                 }
             }
         })
