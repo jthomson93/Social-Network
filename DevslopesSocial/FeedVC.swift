@@ -18,7 +18,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        
+        DataService.ds.REF_POSTS.observe(FIRDataEventType.value, with: { (snapshot) in
+            print(snapshot.value as Any)
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +41,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
-    
-    
     
     
     @IBAction func signOutTapped(_ sender: Any) {
