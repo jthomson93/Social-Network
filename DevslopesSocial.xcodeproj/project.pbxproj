@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1EC113466832A8694946036E /* Pods_DevslopesSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */; };
-		7D1851A71E7DE16E009CDACC /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1851A61E7DE16E009CDACC /* FacebookAuth.swift */; };
-		7D1851A91E7DEB2A009CDACC /* EmailAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1851A81E7DEB2A009CDACC /* EmailAuth.swift */; };
 		7D6F76D71E7DB7EB00CC155E /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76D61E7DB7EB00CC155E /* FancyView.swift */; };
 		7D6F76DA1E7DB87000CC155E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76D91E7DB87000CC155E /* Constants.swift */; };
 		7D6F76DC1E7DBA0100CC155E /* RoundFBLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DB1E7DBA0100CC155E /* RoundFBLogo.swift */; };
 		7D6F76DE1E7DBC5300CC155E /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DD1E7DBC5300CC155E /* FancyField.swift */; };
 		7D6F76E01E7DBD7800CC155E /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F76DF1E7DBD7800CC155E /* LogInButton.swift */; };
+		7DAACCF11E7E9318002DE162 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAACCF01E7E9318002DE162 /* FeedVC.swift */; };
 		7DBB62B91E7DAAFE00C2C4EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */; };
 		7DBB62BB1E7DAAFE00C2C4EE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */; };
 		7DBB62BE1E7DAAFE00C2C4EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB62BC1E7DAAFE00C2C4EE /* Main.storyboard */; };
@@ -26,13 +25,12 @@
 
 /* Begin PBXFileReference section */
 		3F94C72952B843D55276E8B7 /* Pods_DevslopesSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevslopesSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D1851A61E7DE16E009CDACC /* FacebookAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
-		7D1851A81E7DEB2A009CDACC /* EmailAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAuth.swift; sourceTree = "<group>"; };
 		7D6F76D61E7DB7EB00CC155E /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		7D6F76D91E7DB87000CC155E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7D6F76DB1E7DBA0100CC155E /* RoundFBLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundFBLogo.swift; sourceTree = "<group>"; };
 		7D6F76DD1E7DBC5300CC155E /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		7D6F76DF1E7DBD7800CC155E /* LogInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
+		7DAACCF01E7E9318002DE162 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		7DBB62B51E7DAAFE00C2C4EE /* DevslopesSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevslopesSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBB62B81E7DAAFE00C2C4EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -61,8 +59,6 @@
 		7D6F76D31E7DAD6000CC155E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7D1851A61E7DE16E009CDACC /* FacebookAuth.swift */,
-				7D1851A81E7DEB2A009CDACC /* EmailAuth.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -82,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				7DBB62BA1E7DAAFE00C2C4EE /* SignInVC.swift */,
+				7DAACCF01E7E9318002DE162 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -274,13 +271,12 @@
 			files = (
 				7D6F76DA1E7DB87000CC155E /* Constants.swift in Sources */,
 				7D6F76E01E7DBD7800CC155E /* LogInButton.swift in Sources */,
-				7D1851A91E7DEB2A009CDACC /* EmailAuth.swift in Sources */,
+				7DAACCF11E7E9318002DE162 /* FeedVC.swift in Sources */,
 				7D6F76DC1E7DBA0100CC155E /* RoundFBLogo.swift in Sources */,
 				7DBB62BB1E7DAAFE00C2C4EE /* SignInVC.swift in Sources */,
 				7DBB62B91E7DAAFE00C2C4EE /* AppDelegate.swift in Sources */,
 				7D6F76D71E7DB7EB00CC155E /* FancyView.swift in Sources */,
 				7D6F76DE1E7DBC5300CC155E /* FancyField.swift in Sources */,
-				7D1851A71E7DE16E009CDACC /* FacebookAuth.swift in Sources */,
 				7DBB62C11E7DAAFE00C2C4EE /* DevslopesSocial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,41 +11,24 @@ import Firebase
 import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
+import SwiftKeychainWrapper
 
-class FacebookAuth {
+class FacebookAuth: UIViewController{
+    
+    var isSegue = false
     
     func logIn(viewController: UIViewController) { //Facebooks Login Code
         
-        let loginManager = LoginManager()
         
-        loginManager.logIn([.email], viewController: viewController) { loginResult in
-            
-            switch loginResult {
-            case .failed(let error):
-                print(error)
-            case .cancelled:
-                print("JAMIE: User cancelled login")
-            case .success(grantedPermissions: _, declinedPermissions: _, token: _):
-                print("JAMIE: Logged in!")
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                self.firebaseAuth(credential)
-                
-                
-            }
-        }
-    }
-    
-    func firebaseAuth(_ credential: FIRAuthCredential) { //Firebase code to add user to authentication database
-        
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            
-            if error != nil {
-                print("JAMIE: Unable to authenticate with Firebase - \(error)")
-            } else {
-                print("JAMIE: You have successfully authenticated")
-            }
-        })
     }
     
 
+    
+    func completeSignIn(_ id: FIRUser) {
+        
+        let keychainResult = KeychainWrapper.standard.set(id.uid, forKey: KEY_UID)
+        print("JAMIE: Data saved to keychain \(keychainResult)")
+        isSegue = true
+        SignInVC().checkSegue(isTime: self.isSegue)
+    }
 }
