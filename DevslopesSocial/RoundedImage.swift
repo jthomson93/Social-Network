@@ -18,6 +18,7 @@ class RoundedImage: UIImageView {
         layer.shadowColor = UIColor(red: SHADOW_GRAY, green: SHADOW_GRAY, blue: SHADOW_GRAY, alpha: 0.6).cgColor
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         layer.shadowOpacity = 0.8
+        clipsToBounds = true
     }
 
 }
