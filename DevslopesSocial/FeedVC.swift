@@ -14,10 +14,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImage: RoundedImage!
+    @IBOutlet weak var captionField: FancyField!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
-    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imagePicked: Bool = false
+    static var imageCache: NSCache<NSString, UIImage> = NSCache() // Global variable 
 
     
     override func viewDidLoad() {
@@ -72,6 +74,58 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
     
+    @IBAction func postButtonTapped(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            print("JAMIE: The caption is empty. Caption must be entered")
+            return
+        }
+        
+        guard let image = addImage.image else {
+            print("JAMIE: An image must be selected!")
+            return
+        }
+        
+        if imagePicked != true {
+            print("JAMIE: You must select an image")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(image, 0.2) {
+            
+            let imgId = NSUUID().uuidString
+            let metaData = FIRStorageMetadata()
+            metaData.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgId).put(imgData, metadata: metaData, completion: { (metadata, error) in
+                
+                if error != nil {
+                    print("JAMIE: Unable to upload image to Firebase \(error)")
+                } else {
+                    print("JAMIE: Successfully uploaded image to Firebase")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    self.imagePicked = false
+                    self.addImage.image = UIImage(named: "add-image")
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
+                }
+            })
+        }
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, AnyObject> = [
+            "caption": captionField.text! as AnyObject,
+            "imageUrl": imgUrl as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        captionField.text = ""
+        self.posts = []
+    }
     
     @IBAction func signOutTapped(_ sender: Any) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
@@ -80,21 +134,20 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
     
+    @IBAction func addImageTapped(_ sender: UITapGestureRecognizer) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) { // Dismisses the image picker after the user chooses a media source
         
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage { // Checking to make sure we get back an image of type UIImage
             addImage.image = image
+            imagePicked = true
         } else {
             print("JAMIE: A valid image was not selected")
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-    
-    
-    @IBAction func addImageTapped(_ sender: UITapGestureRecognizer) {
-        present(imagePicker, animated: true, completion: nil)
-    }
-
     
 
 }
